@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+# Project exclude paths
+/project/target/
+/target/
+/target/scala-2.11/classes/
