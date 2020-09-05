@@ -19,7 +19,7 @@
 				end = start;
 			} else {
 				end = new Date().getTime();
-				fetch("http://localhost:9988/api/report?sessionId=" + sessionId + "&time=" + (end - start));
+				fetch("http://localhost:8888/api/report?sessionId=" + sessionId + "&time=" + (end - start));
 				start = end;
 			}
 
