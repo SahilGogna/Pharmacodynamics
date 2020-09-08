@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main-container, .inner-container{
+    background-color: #fff;
+    height: 100vh;
+    position: relative;
+}
+.head{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: #BB9FDB;
+    text-align: center;
+    font-weight: 700;
+}
+.box{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+.circle{
+    border-radius: 50%;
+}
+#box-red{
+    background-color: red;
+}
+#box-blue{
+    background-color: #1816FD;
+}
+#box-yellow, #circle-yellow{
+    background-color: #EEE966;
+}
+#box-green{
+    background-color: #15665F;
+}

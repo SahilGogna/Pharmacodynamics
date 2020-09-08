@@ -65,8 +65,8 @@ object SparkAggregator {
       .flatMapGroupsWithState(OutputMode.Append, GroupStateTimeout.NoTimeout())(updateUserResponseTime(n))
       .map{
         userRes =>
-          if(userRes.avgDuration > 1500) s"${userRes.sessionId} is not Attentive"
-          else s"${userRes.sessionId} is Attentive"
+          if(userRes.avgDuration > 1500) s"${userRes.sessionId} is Drunk"
+          else s"${userRes.sessionId} is not Drunk"
       }
       .writeStream
       .format("console")

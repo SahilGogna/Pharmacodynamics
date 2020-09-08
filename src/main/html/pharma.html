@@ -1,11 +1,11 @@
 <html>
 <head>
     <script type="text/javascript">
-		var start = new Date().getTime();
+        var start = new Date().getTime();
 		var end = null;
 
 		function uuidv4() {
-			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
 				var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
 				return v.toString(16);
 			});
@@ -23,38 +23,134 @@
 				start = end;
 			}
 
-			var redSquare = document.getElementById("redSquare");
-			var greenSquare = document.getElementById("greenSquare");
-			var blueSquare = document.getElementById("blueSquare");
-			var yellowSquare = document.getElementById("yellowSquare");
+			var redSquare = document.getElementById("box-red");
+			var greenSquare = document.getElementById("box-green");
+			var blueSquare = document.getElementById("box-blue");
+			var yellowSquare = document.getElementById("box-yellow");
+			var orangeSquare = document.getElementById("box-orange");
+			var pinkSquare = document.getElementById("box-pink");
 
-			var random = Math.random() * 100;
+			var yellowCircle = document.getElementById("circle-yellow");
+			var redCircle = document.getElementById("circle-red");
+			var blueCircle = document.getElementById("circle-blue");
+			var greenCircle = document.getElementById("circle-green");
+			var orangeCircle = document.getElementById("circle-orange");
+			var pinkCircle = document.getElementById("circle-pink");
+
+			var random = Math.random() * 60;
 			redSquare.style.top = Math.round(random) + "%";
-			random = Math.random() * 100;
+			random = Math.random() * 80;
 			redSquare.style.left = Math.round(random) + "%";
 
-			greenSquare.style.top  = Math.round(Math.random() * 100) + "%";
-			greenSquare.style.left = Math.round(Math.random() * 100) + "%";
+			greenSquare.style.top = Math.round(Math.random() * 70) + "%";
+			greenSquare.style.left = Math.round(Math.random() * 90) + "%";
 
-			blueSquare.style.top  = Math.round(Math.random() * 100) + "%";
-			blueSquare.style.left = Math.round(Math.random() * 100) + "%";
+			blueSquare.style.top = Math.round(Math.random() * 70) + "%";
+			blueSquare.style.left = Math.round(Math.random() * 90) + "%";
 
-			yellowSquare.style.top  = Math.round(Math.random() * 100) + "%";
-			yellowSquare.style.left = Math.round(Math.random() * 100) + "%";
+			yellowSquare.style.top = Math.round(Math.random() * 70) + "%";
+			yellowSquare.style.left = Math.round(Math.random() * 90) + "%";
+
+			yellowCircle.style.top = Math.round(Math.random() * 70) + "%";
+			yellowCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			redCircle.style.top = Math.round(Math.random() * 70) + "%";
+			redCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			blueCircle.style.top = Math.round(Math.random() * 70) + "%";
+			blueCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			greenCircle.style.top = Math.round(Math.random() * 70) + "%";
+			greenCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			orangeCircle.style.top = Math.round(Math.random() * 70) + "%";
+			orangeCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			pinkCircle.style.top = Math.round(Math.random() * 70) + "%";
+			pinkCircle.style.left = Math.round(Math.random() * 90) + "%";
+
+			orangeSquare.style.top = Math.round(Math.random() * 70) + "%";
+			orangeSquare.style.left = Math.round(Math.random() * 90) + "%";
+
+			pinkSquare.style.top = Math.round(Math.random() * 70) + "%";
+			pinkSquare.style.left = Math.round(Math.random() * 90) + "%";
+
 		}
 
-		window.onload = function() {
+		window.onload = function () {
 			resetPosition();
-			var redSquare = document.getElementById("redSquare");
+			var redSquare = document.getElementById("box-red");
 			redSquare.onclick = resetPosition;
 		}
-
     </script>
+
+    <style type="text/css">
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main-container, .inner-container{
+    background-color: #fff;
+    height: 100vh;
+    position: relative;
+}
+.head{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: black;
+    text-align: center;
+    font-weight: 700;
+}
+.box{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+.circle{
+    border-radius: 50%;
+}
+#box-red, #circle-red{
+    background-color: red;
+}
+#box-blue, #circle-blue{
+    background-color: blue;
+}
+#box-yellow, #circle-yellow{
+    background-color: yellow;
+}
+#box-green, #circle-green{
+    background-color: green;
+}
+#box-pink, #circle-pink{
+    background-color: #ff00ff;
+}
+#box-orange, #circle-orange{
+    background-color: #ff5500;
+}
+
+    </style>
 </head>
 <body>
-<div id="redSquare" style="background-color: red; position: absolute; width: 150px; height: 150px;"></div>
-<div id="greenSquare" style="background-color: green; position: absolute; width: 150px; height: 150px;"></div>
-<div id="blueSquare" style="background-color: blue; position: absolute; width: 150px; height: 150px;"></div>
-<div id="yellowSquare" style="background-color: yellow; position: absolute; width: 150px; height: 150px;"></div>
+
+<div class="main-container">
+    <div>
+        <h3 class="head">Click on the RED BOX</h3>
+    </div>
+    <div class="inner-container">
+        <div id="box-red" class="box"></div>
+        <div id="box-green" class="box"></div>
+        <div id="box-blue" class="box"></div>
+        <div id="box-yellow" class="box"></div>
+        <div id="box-orange" class="box"></div>
+        <div id="box-pink" class="box"></div>
+        <div id="circle-yellow" class="box circle"></div>
+        <div id="circle-red" class="box circle"></div>
+        <div id="circle-blue" class="box circle"></div>
+        <div id="circle-green" class="box circle"></div>
+        <div id="circle-orange" class="box circle"></div>
+        <div id="circle-pink" class="box circle"></div>
+    </div>
+</div>
+
 </body>
 </html>
